@@ -1,54 +1,58 @@
 "use client";
-import React, { useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { SendIcon } from "@/components/icons";
-import {
-  TextField,
-  TextArea,
-  Label,
-} from "react-aria-components";
+import { TextField, TextArea, Label } from "react-aria-components";
+import BeatLoader from "react-spinners/BeatLoader";
 
 type ChatInputProps = {
-  onSend: (message: string) => void;
+  onSend: (message: string) => Promise<void>; // 支援 async
+  isLoading?: boolean;
 };
 
-const ChatInput: React.FC<ChatInputProps> = ({ onSend }) => {
+const ChatInput: React.FC<ChatInputProps> = ({ onSend, isLoading }) => {
   const [message, setMessage] = useState("");
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
 
-  const handleSend = () => {
-    if (message.trim() !== "") {
-      onSend(message.trim());
-      setMessage("");
+  useEffect(() => {
+    if (textareaRef.current) {
+      textareaRef.current.style.height = "auto";
+      textareaRef.current.style.height = textareaRef.current.scrollHeight + "px";
     }
-  };
+  }, [message]);
 
-  const handleKeyPress = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
-    if (e.key === "Enter" && !e.shiftKey) {
-      e.preventDefault();
-      handleSend();
-    }
+  const handleSend = async () => {
+    if (!message.trim()) return;
+  
+    await onSend(message); // 等待 onSend 完成
+    setMessage(""); // 然後再清空輸入框
   };
 
   return (
     <div className="w-full border-t border-gray-200 p-4 bg-white">
-      <div className="flex items-center gap-2">
+      <div className="flex items-end gap-2">
         <TextField className="flex w-full">
-          <Label className="sr-only">訊息</Label>
+          <Label className="sr-only">Message</Label>
           <TextArea
+            ref={textareaRef}
             value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            onKeyDown={handleKeyPress}
-            placeholder="輸入你的旅遊計畫..."
-            className="w-full resize-none rounded-md border border-gray-300 p-3 text-sm shadow-sm focus:border-emerald-500 focus:outline-none"
+            onChange={(e) => setMessage(e.target.value)} // react-aria 傳的是 string
+            placeholder="Enter your travel plan here..."
+            className="w-full max-h-40 resize-none overflow-y-auto rounded-md border border-gray-300 p-3 text-sm text-amber-800 shadow-sm focus:border-emerald-500 focus:outline-none"
             rows={1}
           />
         </TextField>
         <button
           onClick={handleSend}
-          disabled={message.trim() === ""}
-          className="rounded-md bg-primary-500 p-3"
-          aria-label="送出訊息"
+          disabled={isLoading || !message}
+          className="rounded-md bg-primary-500 p-3 transition hover:bg-primary-600 disabled:opacity-50"
+          aria-label="Submit message"
         >
-          <SendIcon className="size-6 -rotate-30 text-emerald-200 hover:text-emerald-600 disabled:opacity-50 disabled:cursor-not-allowed transition hover:cursor-pointer" />
+          {isLoading ? (
+            <div className="size-6 flex items-center justify-center"><BeatLoader color="#D1FAE5" /></div>
+
+          ) : (
+            <SendIcon className="size-6 -rotate-30 text-emerald-200 hover:text-emerald-600 transition" />
+          )}
         </button>
       </div>
     </div>

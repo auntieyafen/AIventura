@@ -56,4 +56,4 @@ aiventure/                # Project root directory
 yarn install && yarn dev
 ```
 
-blablabla
+create `.env.local` and I will tell u the secret
