@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌍 AIventure
 
-## Getting Started
+AIventure is an AI-powered travel planning web app that helps users generate personalized itineraries through natural language input. Just type in where you want to go, how long you’re staying, and your travel style — AIventure will handle the rest.
 
-First, run the development server:
+## ✨ Features
 
+- 🧠 **Multi-agent AI System**
+  - `WebSearchAgent`: Finds top-rated attractions
+  - `WeatherAgent`: Checks weather to optimize indoor/outdoor plans
+  - `MapsAgent`: Plans routes and transportation between stops
+
+- 💬 **Chat-based Input**
+  - ChatGPT-style interface for natural interaction
+  - Accepts queries like: _"I want to visit Berlin for 3 days, and I like museums"_
+
+- 🗺️ **Interactive Map Output (coming soon)**
+  - View your trip as connected dots on a map
+  - Shows travel time and recommended routes
+
+- 🧩 **Modular Agent Architecture**
+  - Easily extendable with more agents (e.g., cost estimator, event recommender)
+
+- ⚡ Built with:
+  - Next.js App Router
+  - Tailwind CSS (with custom color palette)
+  - `react-aria-components` for accessibility
+  - TypeScript
+  - Azure AI Search or OpenAI API for reasoning
+
+---
+
+## 📁 Project Structure
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+aiventure/                # Project root directory
+├── app/                  # App Router directory in Next.js
+│   ├── page.tsx          # Your homepage (includes chat UI)
+│   └── api/plan/route.ts # API route for calling your AI Agents (POST)
+├── components/           # Reusable frontend UI components
+│   ├── ChatInput.tsx     # The chat input field + send button
+│   ├── ChatMessageList.tsx # Shows the chat messages
+│   └── icons/            # Folder for custom SVG icons (e.g. SendIcon)
+├── lib/                  # Logic/helpers shared across the app
+│   └── agents.ts         # AI agent pipeline logic (WebSearchAgent, etc.)
+├── styles/               # Global CSS and Tailwind styles
+│   └── globals.css
+├── types/                # TypeScript types shared across components
+├── tailwind.config.js    # Your Tailwind theme setup (e.g. colors)
+└── README.md             # Documentation file (the one you're writing now)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Getting Started
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 1. Clone & Install
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+yarn install && yarn dev
+```
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+blablabla
