@@ -2,12 +2,12 @@ from pydantic_settings import BaseSettings
 
 class Settings(BaseSettings):
     DATABASE_URL: str
-    google_maps_api_key: str
-    serper_api_key: str
-    serper_endpoint: str
-    openweather_key: str
-    openai_api_key: str
-    openai_api_base: str
+    GOOGLE_MAPS_API_KEY: str
+    SERPER_API_KEY: str
+    SERPER_ENDPOINT: str
+    OPENWEATHER_KEY: str
+    AZURE_OPENAI_API_KEY: str
+    AZURE_OPENAI_ENDPOINT: str
 
     class Config:
         env_file = ".env"

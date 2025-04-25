@@ -1,7 +1,6 @@
 from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine
 from sqlalchemy.orm import sessionmaker
 from app.models.chat import Base  # for metadata.create_all
-import os
 from dotenv import load_dotenv
 from app.config import settings
 from typing import AsyncGenerator
