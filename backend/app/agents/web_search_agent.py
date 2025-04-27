@@ -32,7 +32,7 @@ def generate_search_queries(query: str, preferences: Dict = None) -> List[str]:
     
     try:
         response = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",
+            model="gpt-4o",
             messages=[{"role": "user", "content": prompt}],
             temperature=0.7
         )
@@ -57,7 +57,7 @@ def filter_and_rank_results(results: List[Dict], preferences: Dict = None) -> Li
     
     try:
         response = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",
+            model="gpt-4o",
             messages=[{"role": "user", "content": prompt}],
             temperature=0.7
         )
@@ -143,7 +143,7 @@ def search_with_context(query: str, context: Dict, top_k: int = 5) -> List[Dict]
     
     try:
         response = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",
+            model="gpt-4o",
             messages=[{"role": "user", "content": prompt}],
             temperature=0.7
         )
