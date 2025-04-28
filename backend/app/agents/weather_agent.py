@@ -1,14 +1,21 @@
 #weather agent
-
-import os, requests, datetime as dt, json, openai
+from openai import AzureOpenAI  
+import os, requests, datetime as dt, json
 from typing import Dict, List
 from dotenv import load_dotenv
-
+from datetime import datetime
 # Load .env file
 load_dotenv()
 OPENWEATHER_KEY = os.getenv("OPENWEATHER_KEY")
 if not OPENWEATHER_KEY:
     raise RuntimeError("OPENWEATHER_KEY not set")
+
+
+client = AzureOpenAI(
+    api_key=os.getenv("AZURE_OPENAI_API_KEY"),
+    api_version="2024-12-01-preview",
+    azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT")
+)
 
 def get_city_weather(city: str, date: dt.date) -> dict:
     """Returns weather summary for the specified date (±5 days)"""
@@ -47,6 +54,7 @@ def get_city_weather(city: str, date: dt.date) -> dict:
 
 def get_weather_advice(weather_data: Dict, activities: List[str] = None) -> Dict:
     """Generate weather-related advice using LLM"""
+    
     prompt = f"""Please provide travel advice based on the following weather data:
     Weather data: {json.dumps(weather_data, ensure_ascii=False, indent=2)}
     Planned activities: {json.dumps(activities, ensure_ascii=False) if activities else "Not specified"}
@@ -69,8 +77,8 @@ def get_weather_advice(weather_data: Dict, activities: List[str] = None) -> Dict
     }}"""
     
     try:
-        response = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",
+        response = client.chat.completions.create(
+            model="gpt-4o",
             messages=[{"role": "user", "content": prompt}],
             temperature=0.7
         )
@@ -88,7 +96,13 @@ def get_weather_advice(weather_data: Dict, activities: List[str] = None) -> Dict
 
 def get_weather_with_advice(city: str, date: dt.date, activities: List[str] = None) -> Dict:
     """获取天气数据和建议"""
-    weather_data = get_city_weather(city, date)
+    try:
+        date_obj = datetime.strptime(date, "%Y-%m-%d").date()
+    except ValueError:
+        return {"error": "Invalid date format, use YYYY-MM-DD"}
+    
+    print("===> get_weather_with_advice CALLED")
+    weather_data = get_city_weather(city, date_obj)
     advice = get_weather_advice(weather_data, activities)
     
     return {

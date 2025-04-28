@@ -15,6 +15,7 @@ if not GMAPS_KEY:
 
 def get_place_coordinates(place: str, city: str) -> Optional[Dict]:
     """Get coordinates for a place using Google Places API"""
+    print(f"Function called: get_place_coordinates({place}, {city})")
     try:
         # First try to get coordinates using Places API
         places_url = "https://maps.googleapis.com/maps/api/place/findplacefromtext/json"

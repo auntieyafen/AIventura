@@ -1,0 +1,92 @@
+{
+  "trip_name": "Munich Trip",
+  "start_date": "2025-05-05",
+  "duration": "3 days",
+  "daily_itinerary": {
+    "day_1": {
+      "date": "2025-05-05",
+      "activities": [
+        "Breakfast and coffee at Café Frischhut near Viktualienmarkt.",
+        "Explore Viktualienmarkt.",
+        "Walk to English Garden for a relaxing stroll and lunch at a beer garden.",
+        "Visit Olympiapark for scenic views and outdoor activities.",
+        "Dinner at a local restaurant near Olympiapark."
+      ]
+    },
+    "day_2": {
+      "date": "2025-05-06",
+      "activities": [
+        "Coffee at Man Versus Machine.",
+        "Visit Nymphenburg Palace Gardens.",
+        "Explore palace grounds and lunch at a nearby café.",
+        "Walk along Isar River for scenic views and relaxation.",
+        "Dinner at a riverside restaurant."
+      ]
+    },
+    "day_3": {
+      "date": "2025-05-07",
+      "activities": [
+        "Coffee at Sweet Spot Kaffee.",
+        "Explore the surrounding area.",
+        "Day trip to Zugspitze Mountain for breathtaking views and outdoor activities.",
+        "Return to Munich and relax at a café or park.",
+        "Farewell dinner at a traditional Bavarian restaurant."
+      ]
+    }
+  },
+  "weather_advice": {
+    "general": "Expect mild temperatures (15-20°C) with a chance of rain. Carry a light jacket and an umbrella."
+  },
+  "transportation_advice": {
+    "general": "Walking is feasible for most attractions within Munich. For the Zugspitze day trip, consider booking a guided tour or using public transportation."
+  },
+  "clothing_advice": {
+    "general": "Comfortable walking shoes, light layers, and a waterproof jacket."
+  },
+  "attraction_ratings_reviews": {
+    "coffee_shops": [
+      {
+        "name": "Café Frischhut",
+        "rating": "Highly rated",
+        "review": "Famous for its Auszogne pastries."
+      },
+      {
+        "name": "Man Versus Machine",
+        "rating": "Highly rated",
+        "review": "Known for its specialty coffee."
+      },
+      {
+        "name": "Sweet Spot Kaffee",
+        "rating": "Highly rated",
+        "review": "Known for artisan coffee."
+      }
+    ],
+    "outdoor_attractions": [
+      {
+        "name": "English Garden",
+        "rating": "Must-visit",
+        "review": "One of the largest urban parks in the world."
+      },
+      {
+        "name": "Nymphenburg Palace Gardens",
+        "rating": "Highly rated",
+        "review": "Stunning gardens surrounding the palace."
+      },
+      {
+        "name": "Isar River Walk",
+        "rating": "Highly rated",
+        "review": "Perfect for relaxation."
+      },
+      {
+        "name": "Olympiapark",
+        "rating": "Highly rated",
+        "review": "Great for outdoor activities and scenic views."
+      },
+      {
+        "name": "Zugspitze Mountain",
+        "rating": "Highly rated",
+        "review": "Spectacular views and a unique experience."
+      }
+    ]
+  }
+}

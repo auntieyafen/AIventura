@@ -1,0 +1,118 @@
+{
+  "trip_name": "Munich Trip",
+  "destination": "Munich, Germany",
+  "duration": "3 days",
+  "start_date": "2025-05-05",
+  "daily_itinerary": [
+    {
+      "date": "2025-05-05",
+      "activities": [
+        {
+          "time": "Morning",
+          "description": "Visit Sweet Spot Kaffee near Viktualienmarkt for coffee and pastries."
+        },
+        {
+          "time": "Afternoon",
+          "description": "Explore English Garden, but bring rain gear."
+        },
+        {
+          "time": "Evening",
+          "description": "Enjoy dinner at a cozy indoor restaurant near the park."
+        }
+      ]
+    },
+    {
+      "date": "2025-05-06",
+      "activities": [
+        {
+          "time": "Morning",
+          "description": "Start with coffee at Man Versus Machine."
+        },
+        {
+          "time": "Afternoon",
+          "description": "Walk through Nymphenburg Palace Gardens (adjust for rain)."
+        },
+        {
+          "time": "Evening",
+          "description": "Visit a local beer hall for a traditional Bavarian experience."
+        }
+      ]
+    },
+    {
+      "date": "2025-05-07",
+      "activities": [
+        {
+          "time": "Morning",
+          "description": "Coffee at Kanso Coffee Lab."
+        },
+        {
+          "time": "Afternoon",
+          "description": "Stroll along the Isar River Walk (weather permitting)."
+        },
+        {
+          "time": "Evening",
+          "description": "Explore indoor attractions or shopping areas."
+        }
+      ]
+    }
+  ],
+  "weather_advice": [
+    {
+      "date": "2025-05-05",
+      "forecast": {
+        "temperature": "16.95°C",
+        "condition": "Light rain",
+        "humidity": "82%",
+        "wind_speed": "3.12 m/s",
+        "cloud_coverage": "100%"
+      },
+      "advice": "Prepare rain gear and consider indoor activities as alternatives."
+    },
+    {
+      "date": "2025-05-06",
+      "forecast": {
+        "temperature": "16.95°C",
+        "condition": "Light rain",
+        "humidity": "82%",
+        "wind_speed": "3.12 m/s",
+        "cloud_coverage": "100%"
+      },
+      "advice": "Similar to May 5, plan for rain and adjust outdoor activities accordingly."
+    },
+    {
+      "date": "2025-05-07",
+      "forecast": {
+        "temperature": "16.95°C",
+        "condition": "Light rain",
+        "humidity": "82%",
+        "wind_speed": "3.12 m/s",
+        "cloud_coverage": "100%"
+      },
+      "advice": "Rain gear is essential; explore indoor attractions or coffee shops."
+    }
+  ],
+  "clothing_advice": [
+    "Wear waterproof jackets and comfortable walking shoes.",
+    "Carry an umbrella or raincoat.",
+    "Dress in layers to adapt to the cool and humid conditions."
+  ],
+  "transportation_advice": "Focus on attractions within walking distance. For longer distances, consider public transportation as a backup option.",
+  "attraction_ratings_reviews": [
+    {
+      "name": "Sweet Spot Kaffee",
+      "review": "Highly rated for its ambiance and quality coffee."
+    },
+    {
+      "name": "English Garden",
+      "review": "A must-visit, but weather may limit outdoor activities."
+    },
+    {
+      "name": "Nymphenburg Palace Gardens",
+      "review": "Beautiful and serene, ideal for walking."
+    },
+    {
+      "name": "Isar River Walk",
+      "review": "Scenic, but check weather conditions before visiting."
+    }
+  ]
+}
