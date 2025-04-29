@@ -2,8 +2,8 @@
 Web Search Agent (Serper Version)
 Using Google Serper API and LLM for intelligent search
 """
-
-import os, requests, json, openai
+from openai import AzureOpenAI  
+import os, requests, json
 from typing import List, Dict
 from dotenv import load_dotenv
 
@@ -14,6 +14,12 @@ SERPER_KEY = os.getenv("SERPER_API_KEY")
 SERPER_ENDPOINT = os.getenv("SERPER_ENDPOINT", "https://google.serper.dev/search")
 
 HEADERS = {"X-API-KEY": SERPER_KEY, "Content-Type": "application/json"}
+
+client = AzureOpenAI(
+    api_key=os.getenv("AZURE_OPENAI_API_KEY"),
+    api_version="2024-12-01-preview",
+    azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT")
+)
 
 def generate_search_queries(query: str, preferences: Dict = None) -> List[str]:
     """Generate optimized search queries using LLM"""
@@ -31,7 +37,7 @@ def generate_search_queries(query: str, preferences: Dict = None) -> List[str]:
     ["query1", "query2", "query3"]"""
     
     try:
-        response = openai.ChatCompletion.create(
+        response = client.chat.completions.create(
             model="gpt-4o",
             messages=[{"role": "user", "content": prompt}],
             temperature=0.7
@@ -56,7 +62,7 @@ def filter_and_rank_results(results: List[Dict], preferences: Dict = None) -> Li
     Return format: Same JSON array as input, but sorted and filtered"""
     
     try:
-        response = openai.ChatCompletion.create(
+        response = client.chat.completions.create(
             model="gpt-4o",
             messages=[{"role": "user", "content": prompt}],
             temperature=0.7

@@ -1,0 +1,64 @@
+{
+  "trip_name": "Munich Coffee and Outdoors",
+  "daily_itinerary": [
+    {
+      "day": 1,
+      "activities": [
+        "Visit Man Versus Machine for specialty coffee",
+        "Explore Roca Junior Artisan Coffee",
+        "Lunch and coffee at Sweet Spot Kaffee",
+        "Relax and walk in English Garden",
+        "Evening coffee at Southbank Specialty Coffee"
+      ]
+    },
+    {
+      "day": 2,
+      "activities": [
+        "Breakfast at Café Tambosi",
+        "Walk and explore Olympiapark",
+        "Visit Nymphenburg Palace Gardens",
+        "Stroll along Isar River Walk"
+      ]
+    },
+    {
+      "day": 3,
+      "activities": [
+        "Day trip to Zugspitze Mountain"
+      ]
+    }
+  ],
+  "weather_advice": {
+    "general": "Mild temperatures (15–20°C) with occasional rain. Pack a light jacket, comfortable walking shoes, and an umbrella."
+  },
+  "transportation_advice": {
+    "walking": "All attractions within Munich are accessible by walking.",
+    "day_trip": "For Zugspitze, consider booking a guided tour or using public transportation."
+  },
+  "clothing_advice": [
+    "Comfortable walking shoes",
+    "Light layers for varying temperatures",
+    "Rain gear (umbrella or waterproof jacket)"
+  ],
+  "attraction_ratings": [
+    {
+      "name": "Man Versus Machine",
+      "rating": 5,
+      "review": "Exceptional coffee quality and modern ambiance."
+    },
+    {
+      "name": "English Garden",
+      "rating": 5,
+      "review": "Perfect for outdoor relaxation and scenic walks."
+    },
+    {
+      "name": "Olympiapark",
+      "rating": 4,
+      "review": "Great for history and nature lovers, with panoramic views."
+    },
+    {
+      "name": "Zugspitze Mountain",
+      "rating": 5,
+      "review": "A must-visit for breathtaking alpine scenery."
+    }
+  ]
+}

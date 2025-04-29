@@ -1,0 +1,74 @@
+{
+  "trip_name": "Munich 3-Day Itinerary",
+  "destination": "Munich, Germany",
+  "start_date": "2025-05-05",
+  "duration": "3 days",
+  "daily_itinerary": {
+    "Day 1": {
+      "title": "Coffee and Outdoor Exploration",
+      "activities": [
+        {
+          "time": "Morning",
+          "details": "Start at Café Frischhut (Prälat-Zistl-Straße 8, 80331 München). Enjoy traditional Bavarian pastries and coffee. Then walk to Man Versus Machine (Müllerstraße 23, 80469 München) for specialty coffee with a modern vibe."
+        },
+        {
+          "time": "Afternoon",
+          "details": "Visit English Garden (München). Explore walking trails and enjoy a picnic."
+        },
+        {
+          "time": "Evening",
+          "details": "End the day at Sweet Spot Kaffee (Heiliggeiststraße 1, 80331 München). Relax with artisan coffee in a cozy atmosphere."
+        }
+      ]
+    },
+    "Day 2": {
+      "title": "Historical and Scenic Walks",
+      "activities": [
+        {
+          "time": "Morning",
+          "details": "Start at Nymphenburg Palace and Gardens (Schloß Nymphenburg 1, 80638 München). Walk through the stunning gardens and admire the palace architecture."
+        },
+        {
+          "time": "Afternoon",
+          "details": "Walk along the Isar River (Wittelsbacherstraße 2b, 80469 München). Scenic paths perfect for a leisurely stroll."
+        },
+        {
+          "time": "Evening",
+          "details": "Explore Olympiapark (Spiridon-Louis-Ring 21, 80809 München). Enjoy panoramic views and relax by the lake."
+        }
+      ]
+    },
+    "Day 3": {
+      "title": "Local Culture and Coffee",
+      "activities": [
+        {
+          "time": "Morning",
+          "details": "Visit Viktualienmarkt (München-Altstadt-Lehel). Explore the lively outdoor market and try local delicacies."
+        },
+        {
+          "time": "Afternoon",
+          "details": "Return to favorite coffee shops or explore new ones like Café Tambosi."
+        },
+        {
+          "time": "Evening",
+          "details": "Flexible time for shopping or indoor activities based on weather conditions."
+        }
+      ]
+    }
+  },
+  "weather_advice": {
+    "summary": "Rainy weather expected for all three days with temperatures around 16.95°C.",
+    "clothing": "Wear waterproof clothing, comfortable walking shoes, and carry an umbrella or raincoat.",
+    "activity_adjustments": "Consider indoor activities or shopping as alternatives if rain persists."
+  },
+  "transportation_advice": "Walking is feasible for all planned locations. Use Google Maps or local guides for walking routes.",
+  "clothing_advice": "Comfortable walking shoes, waterproof jackets, and layered clothing are recommended.",
+  "attraction_ratings_reviews": {
+    "Café Frischhut": "Highly rated for traditional pastries.",
+    "Man Versus Machine": "Popular for specialty coffee.",
+    "English Garden": "A must-visit for outdoor enthusiasts.",
+    "Nymphenburg Palace": "Stunning gardens and historical architecture.",
+    "Olympiapark": "Great for panoramic views and relaxation.",
+    "Viktualienmarkt": "Vibrant market with local culture."
+  }
+}
