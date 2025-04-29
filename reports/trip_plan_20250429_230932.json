@@ -1,0 +1,174 @@
+{
+  "trip_name": "Munich Adventure",
+  "destination": "Munich, Germany",
+  "duration": "3 days",
+  "start_date": "2025-04-29",
+  "itinerary": {
+    "day_1": {
+      "title": "Coffee Exploration and English Garden",
+      "activities": [
+        {
+          "time": "Morning",
+          "details": [
+            "Start your day at Man Versus Machine Coffee Roasters (Müllerstraße 23, 80469 München) for a specialty coffee experience.",
+            "Walk to Café Blá (Lilienstraße 34, 81669 München) for a Scandinavian-inspired coffee and pastry."
+          ]
+        },
+        {
+          "time": "Afternoon",
+          "details": [
+            "Visit Vits Kaffee GmbH & Co.KG (Rumfordstraße 49, 80469 München) for a cozy coffee break.",
+            "Spend the rest of the afternoon exploring the English Garden, a massive park with walking trails, beer gardens, and river surfing."
+          ]
+        },
+        {
+          "time": "Evening",
+          "details": [
+            "Relax at a beer garden in the English Garden or nearby."
+          ]
+        }
+      ]
+    },
+    "day_2": {
+      "title": "Outdoor Adventures and More Coffee",
+      "activities": [
+        {
+          "time": "Morning",
+          "details": [
+            "Start with a coffee at Southbank Specialty Coffee (Guldeinstraße 30, 80339 München).",
+            "Head to Hirschgarten (Hirschgarten 1, 80639 München), a beer garden surrounded by nature and deer."
+          ]
+        },
+        {
+          "time": "Afternoon",
+          "details": [
+            "Explore the Nymphenburg Palace Gardens (Schloß Nymphenburg 1, 80638 München), perfect for walking and photography."
+          ]
+        },
+        {
+          "time": "Evening",
+          "details": [
+            "Enjoy a relaxing evening at a local café or restaurant."
+          ]
+        }
+      ]
+    },
+    "day_3": {
+      "title": "Iconic Landmarks and Final Coffee Stops",
+      "activities": [
+        {
+          "time": "Morning",
+          "details": [
+            "Begin your day at SantoLoco Surf Café (Eisenmannstraße 4, 80331 München) for a unique coffee experience.",
+            "Visit Olympiapark (Spiridon-Louis-Ring 21, 80809 München) for scenic views and walking paths."
+          ]
+        },
+        {
+          "time": "Afternoon",
+          "details": [
+            "End your trip at Marienplatz (Marienplatz, 80331 München), the central square of Munich, ideal for sightseeing and shopping."
+          ]
+        },
+        {
+          "time": "Evening",
+          "details": [
+            "Enjoy your final coffee or meal at a nearby café."
+          ]
+        }
+      ]
+    }
+  },
+  "weather_advice": {
+    "day_1": {
+      "date": "2025-04-29",
+      "weather": "Clear sky, 11.37°C, 79% humidity, light wind (1.31 m/s)",
+      "clothing_advice": "Wear a light jacket or sweater due to cool temperatures. Comfortable walking shoes are recommended.",
+      "activity_advice": "Perfect for walking and outdoor activities. Enjoy clear skies and calm conditions.",
+      "preparation": [
+        "Bring a water bottle",
+        "Sunscreen for prolonged sun exposure"
+      ],
+      "best_time": "Late morning to early afternoon"
+    },
+    "day_2": {
+      "date": "2025-04-30",
+      "weather": "Few clouds, 19.43°C, 52% humidity, moderate wind (3.45 m/s)",
+      "clothing_advice": "Wear light layers, comfortable shoes, and a light jacket for cooler moments.",
+      "activity_advice": "Ideal for walking and outdoor activities with moderate temperatures and minimal cloud cover.",
+      "preparation": [
+        "Carry a water bottle",
+        "Sunglasses or a hat for sun protection"
+      ],
+      "best_time": "Late morning to early evening"
+    },
+    "day_3": {
+      "date": "2025-05-01",
+      "weather": "Few clouds, 19.09°C, 50% humidity, light wind (2.8 m/s)",
+      "clothing_advice": "Wear light layers, a comfortable jacket, and walking shoes.",
+      "activity_advice": "Great for walking and outdoor activities with mild temperatures and low wind speed.",
+      "preparation": [
+        "Bring a water bottle",
+        "Sunscreen"
+      ],
+      "best_time": "Late morning to early afternoon"
+    }
+  },
+  "transportation_advice": "Walking is suitable for all locations. Public transportation can be used for longer distances if needed.",
+  "clothing_advice": "Follow the weather-specific clothing advice provided for each day.",
+  "attraction_ratings_and_reviews": {
+    "coffee_shops": [
+      {
+        "name": "Man Versus Machine Coffee Roasters",
+        "details": "Specialty coffee roasters with a modern vibe.",
+        "link": "https://wanderlog.com/list/geoCategory/17121/best-coffee-shops-and-best-cafes-in-munich"
+      },
+      {
+        "name": "Café Blá",
+        "details": "Scandinavian-inspired café with excellent coffee and pastries.",
+        "link": "https://travelhunter.io/post/munich-best-coffee-shops-2024"
+      },
+      {
+        "name": "Vits Kaffee GmbH & Co.KG",
+        "details": "Known for its high-quality coffee and cozy atmosphere.",
+        "link": "https://www.munich.travel/en/topics/eat-drink/love-letter-coffee-scene"
+      },
+      {
+        "name": "Southbank Specialty Coffee",
+        "details": "A hidden gem for coffee lovers.",
+        "link": "https://europeancoffeetrip.com/munich/"
+      },
+      {
+        "name": "SantoLoco Surf Café",
+        "details": "A unique café with a surf-inspired theme.",
+        "link": "https://www.reddit.com/r/Munich/comments/n2c993/looking_for_advice_on_good_coffee_in_munich/"
+      }
+    ],
+    "outdoor_activities": [
+      {
+        "name": "English Garden",
+        "details": "A massive park with walking trails, beer gardens, and even river surfing.",
+        "link": "https://au.hotels.com/go/germany/outdoor-activities-munich"
+      },
+      {
+        "name": "Hirschgarten",
+        "details": "A beer garden surrounded by nature and deer.",
+        "link": "https://au.hotels.com/go/germany/outdoor-activities-munich"
+      },
+      {
+        "name": "Nymphenburg Palace Gardens",
+        "details": "Beautiful gardens perfect for walking and exploring.",
+        "link": "https://explorial.com/discover-munich-on-a-budget-10-must-do-activities/"
+      },
+      {
+        "name": "Olympiapark",
+        "details": "A park with scenic views, walking paths, and outdoor events.",
+        "link": "https://www.tripadvisor.com/Attractions-g187309-Activities-zft11292-Munich_Upper_Bavaria_Bavaria.html"
+      },
+      {
+        "name": "Marienplatz",
+        "details": "The central square of Munich, ideal for walking and sightseeing.",
+        "link": "https://www.lonelyplanet.com/articles/munich-on-a-budget"
+      }
+    ]
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "trip_name": "Munich Adventure",
+  "destination": "Munich, Germany",
+  "duration": "3 days",
+  "start_date": "2025-05-06",
+  "daily_itinerary": {
+    "day_1": {
+      "date": "2025-05-06",
+      "activities": [
+        "Morning: Visit Café Frischhut for Bavarian pastries.",
+        "Midday: Explore Viktualienmarkt, an outdoor market with covered areas.",
+        "Afternoon: Visit the Munich Residenz Museum (indoor attraction).",
+        "Evening: Relax at a cozy café or enjoy Bavarian cuisine at a local restaurant."
+      ]
+    },
+    "day_2": {
+      "date": "2025-05-07",
+      "activities": [
+        "Morning: Breakfast at Man Versus Machine Coffee Roasters.",
+        "Midday: Explore the Deutsches Museum (indoor science and technology museum).",
+        "Afternoon: Stroll through Marienplatz and enjoy the Glockenspiel show.",
+        "Evening: Visit a bookshop or library for a quiet evening."
+      ]
+    },
+    "day_3": {
+      "date": "2025-05-08",
+      "activities": [
+        "Morning: Coffee and breakfast at Café Luitpold.",
+        "Midday: Visit the BMW Museum (indoor attraction).",
+        "Afternoon: Explore Nymphenburg Palace (indoor and outdoor areas).",
+        "Evening: Relaxing dinner at a traditional Bavarian restaurant."
+      ]
+    }
+  },
+  "weather_advice": {
+    "summary": "Rainy conditions throughout the trip with temperatures around 11.54°C and high humidity (85%).",
+    "clothing": "Wear waterproof clothing, sturdy shoes, and bring an umbrella or raincoat.",
+    "activity_adjustments": "Focus on indoor attractions and coffee shops due to rain."
+  },
+  "transportation_advice": "Walking is feasible for most attractions, but consider public transport for longer distances or heavy rain.",
+  "clothing_advice": "Layered clothing, waterproof jacket, and comfortable shoes are essential.",
+  "attraction_ratings_reviews": {
+    "Café Frischhut": "Highly rated for Bavarian pastries.",
+    "Viktualienmarkt": "Popular outdoor market with diverse offerings.",
+    "Munich Residenz Museum": "Excellent reviews for its historical exhibits.",
+    "Deutsches Museum": "Renowned for its interactive displays.",
+    "BMW Museum": "Highly rated for car enthusiasts.",
+    "Nymphenburg Palace": "Beautiful architecture and gardens."
+  }
+}

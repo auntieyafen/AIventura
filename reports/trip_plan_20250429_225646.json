@@ -1,0 +1,87 @@
+{
+  "trip_name": "Munich Adventure",
+  "dates": "May 6–8, 2025",
+  "budget": "Medium",
+  "transportation_preference": "Walking",
+  "daily_itinerary": {
+    "day_1": {
+      "date": "May 6, 2025",
+      "activities": [
+        {
+          "time": "Morning",
+          "description": "Start your day at Morso Cafe (Nordendstraße 17, 80799 München) for specialty coffee and a cozy atmosphere."
+        },
+        {
+          "time": "Afternoon",
+          "description": "Visit Cafe Lotti (Schleißheimer Str. 13, 80333 München), a charming pastel-colored cafe with locally sourced dishes. Explore Lost Weekend Cafe (Schellingstraße 3, 80799 München), known for its artistic vibe and aromatic coffee."
+        },
+        {
+          "time": "Evening",
+          "description": "Take a short walk to the English Garden, a large public park perfect for a peaceful stroll."
+        }
+      ]
+    },
+    "day_2": {
+      "date": "May 7, 2025",
+      "activities": [
+        {
+          "time": "Morning",
+          "description": "Revisit the English Garden if the weather permits, or explore indoor attractions like the BMW Welt (Am Olympiapark 1, 80809 München) to admire luxury cars."
+        },
+        {
+          "time": "Afternoon",
+          "description": "Head to Olympiapark (Spiridon-Louis-Ring 21, 80809 München) for scenic views and potential indoor activities."
+        },
+        {
+          "time": "Evening",
+          "description": "Enjoy a relaxing evening at a nearby cafe or restaurant."
+        }
+      ]
+    },
+    "day_3": {
+      "date": "May 8, 2025",
+      "activities": [
+        {
+          "time": "Morning",
+          "description": "Spend your last morning revisiting your favorite spots or exploring the Viktualienmarkt, a famous food market in Munich."
+        },
+        {
+          "time": "Afternoon",
+          "description": "Wrap up your trip with a final coffee at one of the recommended cafes."
+        }
+      ]
+    }
+  },
+  "weather_advice": {
+    "forecast": "Light rain is expected throughout the trip (10.4°C, 95% humidity).",
+    "clothing": "Wear waterproof clothing, comfortable walking shoes, and carry an umbrella or raincoat.",
+    "activity_adjustments": "Consider indoor activities like visiting museums or shopping if the rain is heavy."
+  },
+  "transportation_advice": "Walking is feasible for most locations, but bring rain gear to stay comfortable.",
+  "attraction_ratings_reviews": [
+    {
+      "name": "Morso Cafe",
+      "review": "Highly rated for its specialty coffee and cozy ambiance."
+    },
+    {
+      "name": "Cafe Lotti",
+      "review": "Known for its charming decor and locally sourced menu."
+    },
+    {
+      "name": "Lost Weekend Cafe",
+      "review": "A favorite for its artistic vibe and aromatic coffee."
+    },
+    {
+      "name": "English Garden",
+      "review": "A must-visit outdoor space, even in light rain."
+    },
+    {
+      "name": "Olympiapark",
+      "review": "Offers both outdoor and indoor attractions."
+    },
+    {
+      "name": "BMW Welt",
+      "review": "Perfect for car enthusiasts and a great indoor option."
+    }
+  ]
+}
