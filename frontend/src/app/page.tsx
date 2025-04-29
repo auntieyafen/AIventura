@@ -5,8 +5,11 @@ import ChatInput from "@/components/ChatInput";
 import ChatMessageList from "@/components/ChatMessageList";
 import PlaceSearchMap from "@/components/PlaceSearchMap";
 import { getSessionId } from "@/utils/session";
-import { fetchMessages, postMessage } from "@/libs/api";
+import { fetchMessages, postMessage, fetchTripPlan } from "@/libs/api";
 import { useLoadScript } from "@react-google-maps/api";
+import { ChatMessage, TripPlan } from "@/types";
+
+const libraries: ("places" | "drawing" | "geometry" | "visualization")[] = ["places"];
 
 type Message = {
   role: "user" | "assistant";
@@ -16,10 +19,11 @@ type Message = {
 export default function HomePage() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [isSending, setIsSending] = useState(false);
+  const [tripPlan, setTripPlan] = useState<TripPlan | null>(null);
 
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_KEY!,
-    libraries: ["places"], // <- 確保這有加！
+    libraries,
   });
 
   const handleSendMessage = async (message: string) => {
@@ -27,17 +31,19 @@ export default function HomePage() {
     const session_id = getSessionId();
     const userMessage: Message = { role: "user", content: message };
     
-    setMessages((prev) => [...prev, userMessage]);
-    await postMessage(session_id, message);
-
-    // 模擬 AI 回覆
-    setTimeout(() => {
-      const reply = `你輸入的是：「${message}」，我正在幫你查找資料中...`;
-      setMessages((prev) => [...prev, { role: "assistant", content: reply }]);
-      setIsSending(false);
-    }, 1500);
+    try {
+      const res = await postMessage(session_id, userMessage.content);
+      if (res.status === 'ok') {
+        setTripPlan(res.trip);
+      } else {
+        console.error("API response error:", res.detail);
+      }
+    } catch (error) {
+      console.error("Error posting message:", error);
+    }
   };
 
+  // Load messages when the component mounts
   useEffect(() => {
     const load = async () => {
       const data = await fetchMessages(getSessionId());
@@ -46,13 +52,26 @@ export default function HomePage() {
     load();
   }, []);
 
+  const handlePlanStart = async () => {
+    try {
+      const plan = await fetchTripPlan();
+      setTripPlan(plan);
+    } catch (error) {
+      console.error("Failed to fetch trip plan:", error);
+    }
+  };
+
   return (
     <div className="flex flex-col h-screen">
       <div className="flex-1 overflow-auto">
         <ChatMessageList messages={messages} />
-        {isLoaded ? <PlaceSearchMap /> : <div>Loading map...</div>}
+        {isLoaded ? (
+          <PlaceSearchMap tripPlan={tripPlan} />
+        ) : (
+          <div className="text-center py-4">Loading map...</div>
+        )}
       </div>
-      <ChatInput onSend={handleSendMessage} isLoading={isSending} />
+      <ChatInput onSend={handleSendMessage} onPlanStart={handlePlanStart} isLoading={isSending} />
     </div>
   );
 }
