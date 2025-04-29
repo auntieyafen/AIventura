@@ -12,7 +12,7 @@ load_dotenv(dotenv_path=".env.sync")
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
 config = context.config
-config.set_main_option("sqlalchemy.url", os.getenv("DATABASE_URL"))
+config.set_main_option("sqlalchemy.url", os.getenv("DATABASE_URL_SYNC"))
 
 # Interpret the config file for Python logging.
 # This line sets up loggers basically.
@@ -26,9 +26,20 @@ if config.config_file_name is not None:
 import sys
 sys.path.append('./app')
 
-from app.models.chat import Base
-target_metadata = Base.metadata
-# 如果未來有多個 model（例如 chat_sessions），請記得也引入。
+from sqlalchemy import MetaData
+from app.models.chat import Base as ChatBase
+from app.models.trip import Base as TripBase
+
+
+ChatBase.metadata.reflect(bind=None)
+TripBase.metadata.reflect(bind=None)
+
+target_metadata = MetaData()
+
+for m in [ChatBase.metadata, TripBase.metadata]:
+    for table in m.tables.values():
+        target_metadata._add_table(table.name, table.schema, table)
+
 
 # other values from the config, defined by the needs of env.py,
 # can be acquired:

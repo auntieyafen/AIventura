@@ -13,18 +13,27 @@ redis_client = redis.from_url("redis://localhost:6379", decode_responses=True)
 
 
 async def save_trip_to_cache(session_id: UUID, trip_data: dict, ttl_seconds: int = 3600) -> None:
-    await redis_client.set(f"trip:{session_id}", json.dumps(trip_data), ex=ttl_seconds)
+    try:
+        await redis_client.set(f"trip:{session_id}", json.dumps(trip_data), ex=ttl_seconds)
+    except Exception as e:
+        print(f"[Redis Error] save_trip_to_cache failed: {e}")
 
 
 async def get_trip_from_cache(session_id: UUID) -> Optional[dict]:
-    trip_str = await redis_client.get(f"trip:{session_id}")
-    if trip_str:
-        return json.loads(trip_str)
+    try:
+        trip_str = await redis_client.get(f"trip:{session_id}")
+        if trip_str:
+            return json.loads(trip_str)
+    except Exception as e:
+        print(f"[Redis Error] get_trip_from_cache failed: {e}")
     return None
 
 
 async def delete_trip_from_cache(session_id: UUID) -> None:
-    await redis_client.delete(f"trip:{session_id}")
+    try:
+        await redis_client.delete(f"trip:{session_id}")
+    except Exception as e:
+        print(f"[Redis Error] delete_trip_from_cache failed: {e}")
 
 
 # ------------ fallback DB ------------

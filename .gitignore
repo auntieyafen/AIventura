@@ -68,3 +68,13 @@ htmlcov/
 # Optional: Node.js frontend junk if mixed project
 node_modules/
 .next/
+backend/alembic/__pycache__/env.cpython-312.pyc
+backend/alembic/versions/25be2e3c0239_create_trips_table.py
+backend/alembic/versions/4794395d4ee6_create_trips_table.py
+backend/alembic/__pycache__/env.cpython-312.pyc
+backend/app/__pycache__/db.cpython-312.pyc
+backend/app/__pycache__/main.cpython-312.pyc
+backend/app/api/__pycache__/messages.cpython-312.pyc
+backend/app/__pycache__/main.cpython-312.pyc
+backend/app/__pycache__/db.cpython-312.pyc
+backend/alembic/__pycache__/env.cpython-312.pyc

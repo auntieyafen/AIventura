@@ -33,13 +33,15 @@ export default function HomePage() {
     
     try {
       const res = await postMessage(session_id, userMessage.content);
-      if (res.status === 'ok') {
+      if (res.status === 'ok' && res.trip) {
         setTripPlan(res.trip);
       } else {
-        console.error("API response error:", res.detail);
+        console.error("API response error:", res);
       }
     } catch (error) {
       console.error("Error posting message:", error);
+    } finally {
+      setIsSending(false);
     }
   };
 
