@@ -1,6 +1,70 @@
-backend/.env
-backend/app/__pycache__/config.cpython-312.pyc
-backend/app/__pycache__/config.cpython-312.pyc
-backend/app/__pycache__/config.cpython-312.pyc
-backend/app/__pycache__/db.cpython-312.pyc
-cache.db
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# Environment files
+.env
+.env.*
+*.env
+
+# VSCode settings
+.vscode/
+
+# Anaconda junk
+*.ipynb_checkpoints
+.conda/
+anaconda3/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Alembic migration cache
+alembic/versions/__pycache__/
+
+# Logs
+*.log
+
+# Compiled files
+*.so
+*.out
+*.o
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# Workspace
+workspace/
+
+# Reports
+reports/
+
+# SQLAlchemy temporary files
+*.db
+
+# FastAPI or Uvicorn reload artifacts
+*.pid
+
+# pyright / pytype / mypy type-checker cache
+.pyright/
+.pytype/
+.mypy_cache/
+
+# Editor backups
+*~
+*.bak
+*.swp
+
+# Coverage reports
+htmlcov/
+.coverage
+.tox/
+
+# Optional: Node.js frontend junk if mixed project
+node_modules/
+.next/

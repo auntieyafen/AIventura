@@ -1,21 +1,19 @@
-#weather agent
 from openai import AzureOpenAI  
-import os, requests, datetime as dt, json
+import requests, datetime as dt, json
 from typing import Dict, List
-from dotenv import load_dotenv
 from datetime import datetime
-import re
-# Load .env file
-load_dotenv()
-OPENWEATHER_KEY = os.getenv("OPENWEATHER_KEY")
+from app.config import settings
+
+
+OPENWEATHER_KEY = settings.OPENWEATHER_KEY
 if not OPENWEATHER_KEY:
     raise RuntimeError("OPENWEATHER_KEY not set")
 
 
 client = AzureOpenAI(
-    api_key=os.getenv("AZURE_OPENAI_API_KEY"),
+    api_key=settings.AZURE_OPENAI_API_KEY,
     api_version="2024-12-01-preview",
-    azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT")
+    azure_endpoint=settings.AZURE_OPENAI_ENDPOINT
 )
 
 def get_city_weather(city: str, date: dt.date) -> dict:
@@ -107,7 +105,6 @@ def get_weather_advice(weather_data: Dict, activities: List[str] = None) -> Dict
         }
 
 def get_weather_with_advice(city: str, date: dt.date, activities: List[str] = None) -> Dict:
-    """获取天气数据和建议"""
     try:
         date_obj = datetime.strptime(date, "%Y-%m-%d").date()
     except ValueError:

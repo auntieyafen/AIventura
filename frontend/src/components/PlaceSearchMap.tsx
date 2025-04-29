@@ -1,62 +1,60 @@
 "use client";
-import React, { useState } from "react";
-import { GoogleMap, MarkerF } from "@react-google-maps/api";
-import usePlacesAutocomplete, {
-  getGeocode,
-  getLatLng,
-} from "use-places-autocomplete";
 
-type LatLng = {
-  lat: number;
-  lng: number;
+import React, { useMemo } from "react";
+import { GoogleMap, MarkerF, PolylineF } from "@react-google-maps/api";
+import { TripPlan } from "@/types";
+
+type PlaceSearchMapProps = {
+  tripPlan: TripPlan | null;
 };
 
-export default function PlaceSearchMap() {
-  const [marker, setMarker] = useState<LatLng | null>(null);
-  const {
-    ready,
-    value,
-    suggestions: { status, data },
-    setValue,
-    clearSuggestions,
-  } = usePlacesAutocomplete({ debounce: 300 });
+const centerDefault = { lat: 48.1374, lng: 11.5755 }; // Munich
 
-  const handleSelectPlace = async (description: string) => {
-    setValue(description, false);
-    clearSuggestions();
-    const results = await getGeocode({ address: description });
-    const { lat, lng } = await getLatLng(results[0]);
-    setMarker({ lat, lng });
-  };
+const COLORS = ["#FF5733", "#33C1FF", "#8DFF33", "#FFC133", "#FF33A8", "#33FFB5"];
+
+export default function PlaceSearchMap({ tripPlan }: PlaceSearchMapProps) {
+  const center = useMemo(() => {
+    if (tripPlan?.days?.[0]?.places?.[0]) {
+      return {
+        lat: tripPlan.days[0].places[0].lat,
+        lng: tripPlan.days[0].places[0].lng,
+      };
+    }
+    return centerDefault;
+  }, [tripPlan]);
 
   return (
     <div className="px-4 py-2">
-      <input
-        className="w-full border px-3 py-2 rounded-md"
-        placeholder="Search a place..."
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
-        disabled={!ready}
-      />
-      {status === "OK" && (
-        <ul className="bg-white shadow rounded-md mt-1">
-          {data.map(({ place_id, description }) => (
-            <li
-              key={place_id}
-              className="p-2 hover:bg-gray-100 cursor-pointer"
-              onClick={() => handleSelectPlace(description)}
-            >
-              {description}
-            </li>
-          ))}
-        </ul>
-      )}
       <GoogleMap
         zoom={13}
-        center={marker ?? { lat: 25.034, lng: 121.5623 }}
-        mapContainerStyle={{ width: "100%", height: "400px" }}
+        center={center}
+        mapContainerStyle={{ width: "100%", height: "500px" }}
       >
-        {marker && <MarkerF position={marker} />}
+        {tripPlan?.days.map((day, idx) => (
+          <React.Fragment key={day.date}>
+            <PolylineF
+              path={day.places.map((p) => ({ lat: p.lat, lng: p.lng }))}
+              options={{
+                strokeColor: COLORS[idx % COLORS.length],
+                strokeOpacity: 0.8,
+                strokeWeight: 4,
+              }}
+            />
+
+            {day.places.map((place, pIdx) => (
+              <MarkerF
+                key={`${day.date}-${pIdx}`}
+                position={{ lat: place.lat, lng: place.lng }}
+                label={{
+                  text: `${pIdx + 1}`,
+                  fontSize: "12px",
+                  color: "#000",
+                }}
+                title={place.name}
+              />
+            ))}
+          </React.Fragment>
+        ))}
       </GoogleMap>
     </div>
   );

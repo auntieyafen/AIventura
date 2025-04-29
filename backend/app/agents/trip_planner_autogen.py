@@ -1,43 +1,35 @@
 """
 Multi-agent Travel Planning System using Autogen
 """
-#trip_planner_autogen
 
-import os
 import json
 from datetime import datetime, timedelta
-from typing import Dict, List, Optional
+from typing import Dict, Optional
 from pathlib import Path
 import autogen
-from dotenv import load_dotenv
 
-# 导入其他agent
-from maps_agent import get_place_coordinates, optimize_route
-from weather_agent import get_weather_with_advice
-from web_search_agent import search_places, search_with_context
+from app.config import settings
+from app.agents.maps_agent import get_place_coordinates, optimize_route
+from app.agents.weather_agent import get_weather_with_advice
+from app.agents.web_search_agent import search_places, search_with_context
 
-# 加载环境变量
-load_dotenv()
 
-# 配置 Autogen for Azure OpenAI
 config_list = [
     {
         "model": "gpt-4o",  # or your model name
-        "api_key": os.getenv("AZURE_OPENAI_API_KEY"),
-        "base_url": os.getenv("AZURE_OPENAI_ENDPOINT"),
+        "api_key": settings.AZURE_OPENAI_API_KEY,
+        "base_url": settings.AZURE_OPENAI_ENDPOINT,
         "api_type": "azure",
         "api_version": "2024-12-01-preview",  # or your version
     }
 ]
 
-# 定义智能体配置
 llm_config = {
     "config_list": config_list,
     "temperature": 0,
     "timeout": 600,
 }
 
-# 创建智能体
 planner = autogen.AssistantAgent(
     name="planner",
     llm_config=llm_config,
@@ -72,8 +64,6 @@ maps_agent = autogen.AssistantAgent(
     "Always call the registered functions to get real-time data. Do NOT fabricate the result yourself."
     """
 )
-# For maps_agent
-
 
 
 maps_agent.register_for_llm(description="Get place coordinates")(get_place_coordinates)
@@ -144,12 +134,12 @@ user_proxy = autogen.UserProxyAgent(
     llm_config=llm_config
 )
 import re
-def extract_final_json(messages):                       # --- 新增
+def extract_final_json(messages):
     for msg in reversed(messages):
         m = re.search(r"```json\s+([\s\S]*?)```", msg["content"])
         if m:
             return json.loads(m.group(1))
-    raise RuntimeError("未找到符合格式的 JSON 结果")
+    raise RuntimeError("Didn't find final JSON in messages")
 
 def create_trip_plan(user_input: str, start_date: Optional[datetime] = None, trip_name: Optional[str] = None) -> Dict:
     """
@@ -197,7 +187,7 @@ def create_trip_plan(user_input: str, start_date: Optional[datetime] = None, tri
     )
     
     # Get final result
-    plan_dict = extract_final_json(groupchat.messages)      # <<< 修改
+    plan_dict = extract_final_json(groupchat.messages)
     return plan_dict  
 
 def save_trip_plan(plan: Dict, output_dir: str = "reports") -> Path:

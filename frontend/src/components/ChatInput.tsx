@@ -1,15 +1,17 @@
 "use client";
+
 import React, { useRef, useState, useEffect } from "react";
 import { SendIcon } from "@/components/icons";
 import { TextField, TextArea, Label } from "react-aria-components";
 import BeatLoader from "react-spinners/BeatLoader";
 
 type ChatInputProps = {
-  onSend: (message: string) => Promise<void>; // 支援 async
+  onSend: (message: string) => Promise<void>;
+  onPlanStart: () => Promise<void>; // Click to fetch trip plan
   isLoading?: boolean;
 };
 
-const ChatInput: React.FC<ChatInputProps> = ({ onSend, isLoading }) => {
+const ChatInput: React.FC<ChatInputProps> = ({ onSend, onPlanStart, isLoading }) => {
   const [message, setMessage] = useState("");
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
@@ -22,9 +24,10 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSend, isLoading }) => {
 
   const handleSend = async () => {
     if (!message.trim()) return;
-  
-    await onSend(message); // 等待 onSend 完成
-    setMessage(""); // 然後再清空輸入框
+
+    await onSend(message);  
+    await onPlanStart();    
+    setMessage("");         
   };
 
   return (
@@ -35,7 +38,7 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSend, isLoading }) => {
           <TextArea
             ref={textareaRef}
             value={message}
-            onChange={(e) => setMessage(e.target.value)} // react-aria 傳的是 string
+            onChange={(e) => setMessage(e.target.value)}
             placeholder="Enter your travel plan here..."
             className="w-full max-h-40 resize-none overflow-y-auto rounded-md border border-gray-300 p-3 text-sm text-amber-800 shadow-sm focus:border-emerald-500 focus:outline-none"
             rows={1}
@@ -48,8 +51,9 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSend, isLoading }) => {
           aria-label="Submit message"
         >
           {isLoading ? (
-            <div className="size-6 flex items-center justify-center"><BeatLoader color="#D1FAE5" /></div>
-
+            <div className="size-6 flex items-center justify-center">
+              <BeatLoader color="#D1FAE5" />
+            </div>
           ) : (
             <SendIcon className="size-6 -rotate-30 text-emerald-200 hover:text-emerald-600 transition" />
           )}
