@@ -1,4 +1,3 @@
-#report agent
 import markdown2, uuid
 from pathlib import Path
 from datetime import date

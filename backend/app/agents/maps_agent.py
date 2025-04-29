@@ -1,15 +1,14 @@
 #map_agent
-import os, requests, logging, json, openai
+import requests, logging, json, openai
 from typing import List, Dict, Optional, Set
-from dotenv import load_dotenv
+from app.config import settings
+
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# Load .env file
-load_dotenv()
-GMAPS_KEY = os.getenv("GOOGLE_MAPS_API_KEY")
+GMAPS_KEY = settings.GOOGLE_MAPS_API_KEY
 if not GMAPS_KEY:
     raise RuntimeError("GOOGLE_MAPS_API_KEY not set")
 

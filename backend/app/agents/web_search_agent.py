@@ -2,23 +2,22 @@
 Web Search Agent (Serper Version)
 Using Google Serper API and LLM for intelligent search
 """
+import openai
 from openai import AzureOpenAI  
 import os, requests, json
 from typing import List, Dict
-from dotenv import load_dotenv
+from app.config import settings
 
-# 加载 .env 文件
-load_dotenv()
 
-SERPER_KEY = os.getenv("SERPER_API_KEY")
-SERPER_ENDPOINT = os.getenv("SERPER_ENDPOINT", "https://google.serper.dev/search")
+SERPER_KEY = settings.SERPER_API_KEY
+SERPER_ENDPOINT = settings.SERPER_ENDPOINT
 
 HEADERS = {"X-API-KEY": SERPER_KEY, "Content-Type": "application/json"}
 
 client = AzureOpenAI(
-    api_key=os.getenv("AZURE_OPENAI_API_KEY"),
+    api_key=settings.AZURE_OPENAI_API_KEY,
     api_version="2024-12-01-preview",
-    azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT")
+    azure_endpoint=settings.AZURE_OPENAI_ENDPOINT,
 )
 
 def generate_search_queries(query: str, preferences: Dict = None) -> List[str]:
