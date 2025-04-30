@@ -64,6 +64,8 @@ def get_weather_advice(weather_data: Dict, activities: List[str] = None) -> Dict
     3. Whether wind will affect activities
     4. Suggested clothing
     5. Suggested activity times
+
+    ONLY return the JSON object, do not add any extra text or explanation.
     
     Return format:
     {{
@@ -81,7 +83,16 @@ def get_weather_advice(weather_data: Dict, activities: List[str] = None) -> Dict
             messages=[{"role": "user", "content": prompt}],
             temperature=0.7
         )
-        return json.loads(response.choices[0].message.content)
+        content = response.choices[0].message.content.strip()
+
+        # 尝试提取出真正的 JSON 部分
+        match = re.search(r'\{.*\}', content, re.DOTALL)
+        if match:
+            content = match.group(0)
+        else:
+            raise ValueError(f"Cannot parse content: {content}")
+
+        return json.loads(content)
     except Exception as e:
         print(f"Error generating weather advice: {str(e)}")
         return {

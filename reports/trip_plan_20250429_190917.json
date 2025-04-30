@@ -1,0 +1,107 @@
+{
+  "trip_name": "Munich Adventure",
+  "destination": "Munich, Germany",
+  "duration": "3 days",
+  "start_date": "2025-05-06",
+  "daily_itinerary": {
+    "day_1": {
+      "title": "Coffee Exploration and English Garden",
+      "activities": [
+        {
+          "time": "Morning",
+          "location": "Man Versus Machine",
+          "address": "Müllerstraße 23, 80469 München",
+          "description": "Specialty coffee shop known for high-quality brews."
+        },
+        {
+          "time": "Midday",
+          "location": "Roca Junior Artisan Coffee",
+          "address": "Kreittmayrstraße 5, 80335 München",
+          "description": "Famous for its cappuccinos."
+        },
+        {
+          "time": "Afternoon",
+          "location": "Sweet Spot Kaffee",
+          "address": "Heiliggeiststraße 1, 80331 München",
+          "description": "Cozy spot for coffee lovers."
+        },
+        {
+          "time": "Evening",
+          "location": "English Garden",
+          "address": "München, Deutschland",
+          "description": "One of the largest urban parks in the world."
+        }
+      ]
+    },
+    "day_2": {
+      "title": "Historical Gardens and River Walk",
+      "activities": [
+        {
+          "time": "Morning",
+          "location": "Nymphenburg Palace Gardens",
+          "address": "Schloß Nymphenburg 1, 80638 München",
+          "description": "Stunning historical site with beautiful gardens."
+        },
+        {
+          "time": "Afternoon",
+          "location": "Isar River Walk",
+          "address": "Wittelsbacherstraße 2b, 80469 München",
+          "description": "Scenic walking paths along the river."
+        },
+        {
+          "time": "Evening",
+          "location": "Nearby restaurant or café",
+          "description": "Enjoy dinner and relax."
+        }
+      ]
+    },
+    "day_3": {
+      "title": "Olympiapark and Final Coffee Stop",
+      "activities": [
+        {
+          "time": "Morning",
+          "location": "Olympiapark",
+          "address": "Spiridon-Louis-Ring 21, 80809 München",
+          "description": "Great for outdoor activities and architecture."
+        },
+        {
+          "time": "Afternoon",
+          "location": "Favorite coffee shop or new exploration",
+          "description": "Return to your favorite coffee shop or explore a new one."
+        },
+        {
+          "time": "Evening",
+          "location": "Relaxing evening walk or shopping",
+          "description": "Wrap up your trip with leisure activities."
+        }
+      ]
+    }
+  },
+  "weather_advice": {
+    "forecast": [
+      {
+        "date": "2025-05-06",
+        "description": "Light rain, 13.45°C, 85% humidity, wind speed 2.51 m/s, 100% cloud cover."
+      },
+      {
+        "date": "2025-05-07",
+        "description": "Light rain, 13.45°C, 85% humidity, wind speed 2.51 m/s, 100% cloud cover."
+      },
+      {
+        "date": "2025-05-08",
+        "description": "Light rain, 13.45°C, 85% humidity, wind speed 2.51 m/s, 100% cloud cover."
+      }
+    ],
+    "clothing": "Wear waterproof clothing and comfortable walking shoes. Bring an umbrella or raincoat.",
+    "activity_adjustments": "Consider indoor activities or shopping as alternatives during heavy rain.",
+    "preparation": "Check the forecast daily and prepare rain gear."
+  },
+  "transportation_advice": "Walking is feasible for all locations. Use Google Maps or a similar app for navigation.",
+  "clothing_advice": "Comfortable walking shoes, waterproof jacket, and layers for cooler temperatures.",
+  "attraction_ratings_reviews": {
+    "Man Versus Machine": "Highly rated for specialty coffee.",
+    "English Garden": "A must-visit for nature lovers.",
+    "Nymphenburg Palace Gardens": "Stunning historical site with beautiful gardens.",
+    "Olympiapark": "Great for outdoor activities and architecture."
+  }
+}

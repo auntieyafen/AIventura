@@ -41,10 +41,18 @@ def generate_search_queries(query: str, preferences: Dict = None) -> List[str]:
             messages=[{"role": "user", "content": prompt}],
             temperature=0.7
         )
-        return json.loads(response.choices[0].message.content)
+        content = response.choices[0].message.content.strip()
+        match = re.search(r'\[.*\]', content, re.DOTALL)
+        if match:
+            content = match.group(0)
+        else:
+            raise ValueError(f"Cannot parse content: {content}")
+
+        return json.loads(content)
+    
     except Exception as e:
         print(f"Error generating search queries: {str(e)}")
-        return [query]  # Fallback to original query
+        return [query]  # fallback
 
 def filter_and_rank_results(results: List[Dict], preferences: Dict = None) -> List[Dict]:
     """Filter and rank search results using LLM"""
@@ -66,7 +74,16 @@ def filter_and_rank_results(results: List[Dict], preferences: Dict = None) -> Li
             messages=[{"role": "user", "content": prompt}],
             temperature=0.7
         )
-        return json.loads(response.choices[0].message.content)
+        content = response.choices[0].message.content.strip()
+
+        
+        match = re.search(r'\[.*\]', content, re.DOTALL)
+        if match:
+            content = match.group(0)
+        else:
+            raise ValueError(f"Cannot parse content: {content}")
+
+        return json.loads(content)
     except Exception as e:
         print(f"Error filtering results: {str(e)}")
         return results

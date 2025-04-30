@@ -1,0 +1,59 @@
+{
+  "trip_name": "Munich Adventure",
+  "destination": "Munich, Germany",
+  "duration": "3 days",
+  "start_date": "2025-05-06",
+  "itinerary": {
+    "day_1": {
+      "title": "Coffee and Exploration",
+      "activities": [
+        "Morning: Start at Man Versus Machine (Müllerstraße 23) for artisan coffee.",
+        "Midday: Visit Roca Junior Artisan Coffee (Kreittmayrstraße 5) for a second coffee stop.",
+        "Afternoon: Explore Sweet Spot Kaffee (Heiliggeiststraße 1) and enjoy its cozy atmosphere.",
+        "Evening: Walk through the Viktualienmarkt for local food and crafts."
+      ]
+    },
+    "day_2": {
+      "title": "Outdoor and Indoor Mix",
+      "activities": [
+        "Morning: Visit the Englischer Garten (English Garden) for a scenic walk (bring rain gear).",
+        "Midday: Head to Nymphenburg Palace Gardens for a mix of history and nature.",
+        "Afternoon: Take a break at a nearby coffee shop or explore indoor attractions if the rain intensifies."
+      ]
+    },
+    "day_3": {
+      "title": "Parks and Views",
+      "activities": [
+        "Morning: Walk along the Isar River for a peaceful start to the day.",
+        "Midday: Explore Olympiapark (Spiridon-Louis-Ring 21) for panoramic views and walking trails.",
+        "Afternoon: Revisit any favorite spots or enjoy a relaxed coffee at Southbank Specialty Coffee."
+      ]
+    }
+  },
+  "weather_advice": {
+    "forecast": [
+      {
+        "date": "2025-05-06",
+        "description": "Light rain, 10.4°C, 95% humidity, wind speed 1.39 m/s, 100% cloud cover."
+      },
+      {
+        "date": "2025-05-07",
+        "description": "Light rain, 10.4°C, 95% humidity, wind speed 1.39 m/s, 100% cloud cover."
+      },
+      {
+        "date": "2025-05-08",
+        "description": "Light rain, 10.4°C, 95% humidity, wind speed 1.39 m/s, 100% cloud cover."
+      }
+    ],
+    "clothing": "Wear waterproof clothing, bring an umbrella or raincoat, and dress in layers to stay warm.",
+    "activity_adjustments": "Outdoor activities may be less enjoyable due to rain. Consider indoor alternatives like museums or coffee shops.",
+    "preparation": "Check the weather daily and prepare rain gear."
+  },
+  "transportation_advice": "Walking is feasible for most locations, but consider taxis or public transport if the rain becomes heavy.",
+  "clothing_advice": "Dress in layers, wear comfortable walking shoes, and carry rain gear.",
+  "attraction_ratings": {
+    "Man Versus Machine": "Highly rated for artisan coffee.",
+    "Englischer Garten": "A must-visit for outdoor enthusiasts.",
+    "Viktualienmarkt": "Great for food lovers and local crafts."
+  }
+}

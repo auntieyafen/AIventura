@@ -218,7 +218,7 @@ def save_trip_plan(plan: Dict, output_dir: str = "reports") -> Path:
 if __name__ == "__main__":
     # Example usage
     user_input = "I want to visit Munich for three days, I like coffee shops and outdoor activities, medium budget, prefer walking over taking transportation"
-    start_date = datetime.now() + timedelta(days=7)
+    start_date = datetime.now()
     
     try:
         # Create travel plan
